@@ -12,12 +12,11 @@ export default class Transaction extends BaseModel {
   public amount : Number
 
   @column()
-  public type : String
+  public category : String
+
+  @column()
+  public type : 'recipe' | 'expense'
 
   @column.dateTime({ autoCreate: true })
-  public createdAt: DateTime
-
-
-  @column.dateTime({ autoCreate: true, autoUpdate: true })
-  public updatedAt: DateTime
+  public date: DateTime
 }

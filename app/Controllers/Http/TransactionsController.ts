@@ -9,7 +9,7 @@ export default class TransactionsController {
   }
 
   public async store({ request }: HttpContextContract) {
-    const data = request.only(['description', 'type', 'amount'])
+    const data = request.only(['description', 'type', 'amount', 'category'])
     const transaction = await Transaction.create(data)
 
     return transaction
@@ -24,7 +24,7 @@ export default class TransactionsController {
 
   public async update({request, params}: HttpContextContract) {
     const transaction = await Transaction.findOrFail(params.id)
-    const data = request.only(['description', 'type', 'amount'])
+    const data = request.only(['description', 'type', 'amount', 'category'])
 
     transaction.merge(data)
     await transaction.save()

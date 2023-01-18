@@ -6,11 +6,11 @@ export default class extends BaseSchema {
   public async up () {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
-      table.string('description'),
-      table.double('amount'),
-      table.string('type')
-      table.timestamp('created_at', { useTz: true })
-      table.timestamp('updated_at', { useTz: true })
+      table.string('description')
+      table.float('amount')
+      table.enum('type', ['recipe','expense'])
+      table.string('category')
+      table.timestamp('date', { useTz: true })
     })
   }
 
