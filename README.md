@@ -12,9 +12,10 @@
 
 ## Setup para testar projeto
 
-Ter instalado ou instalar
+Ter instalado ou instalar <br>
 [Docker Compose](https://docs.docker.com/compose/install/)
-[Doker](https://www.docker.com/)
+<br>
+[Docker](https://www.docker.com/)
 
 ```bash
 # Subir Container dokker com o mysql
